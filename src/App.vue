@@ -72,9 +72,9 @@ export default {
       var bar = document.getElementById('draggableLine');
       var one = document.getElementById('xxxleftSide');
       var two = document.getElementById('xxxrightSide');
-      bar.style.left = (e.x)+"px";
-      one.style.width = (e.x - 70)+"px";
-      two.style.width = document.getElementById('xxxglobal').offsetWidth - (e.x)+"px";
+      bar.style.left = (e.x)-4+"px";
+      one.style.width = (e.x - 100)+"px";
+      two.style.width = document.getElementById('xxxglobal').offsetWidth - (e.x)+4+"px";
       console.log(e.x)
     },
     dragStart(e) {
