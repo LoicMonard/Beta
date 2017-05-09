@@ -109,11 +109,32 @@ body {
     display: inline-block;
     font-size: 0;
     padding: 12px;
+    position: relative;
     img {
       width: 130px;
       height: 130px;
     }
+    #xxxplaylistOverlay {
+      .border-box;
+      width: 130px;
+      height: 130px;
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: black;
+      transition: all .2s ease;
+      opacity: 0;
+      img {
+        margin-left: 34px;
+        margin-top: 34px;
+        height: 60px;
+        width: 60px;
+      }
+    }
   }
+  #xxxsinglePlaylist:hover > #xxxplaylistOverlay {
+      opacity: 0.8;
+    }
   #xxxgradientBack {
     width: 100%;
     left: 0;
@@ -121,9 +142,22 @@ body {
     .gradient;
     height: 150px;
     position: absolute;
+    pointer-events: none;
   }
 }
 
+.rotate-move {
+  transition: transform 1s;
+}
+
+.rotate-enter-active, .rotate-leave-active {
+  transition: opacity .5s, transform .5s;
+}
+
+.rotate-enter, .rotate-leave-active {
+  opacity: 0;
+  transform: translateY(-200px);
+}
 
 
 //RIGHT SIDE SETTINGS
