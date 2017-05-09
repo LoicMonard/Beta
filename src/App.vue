@@ -17,9 +17,18 @@
             <img v-bind:src="playlist.img">
           </div>
         </div>
+        <div id="xxxgradientBack">
+        </div>
       </div>
       <div class="xxxmyFriendsPlaylists">
-        <span id="xxxmenuTitle">Playlists de mes amis</span>
+        <span id="xxxmenuTitle">Mes playlists</span>
+        <div class="xxxplaylistContainer">
+          <div id="xxxsinglePlaylist" v-for="playlist in playlists">
+            <img v-bind:src="playlist.img">
+          </div>
+        </div>
+        <div id="xxxgradientBack">
+        </div>
       </div>
     </div>
 
@@ -39,6 +48,12 @@ export default {
       playlists: [
         {name: '1', img: 'https://4.bp.blogspot.com/-Qls0bKPYaBY/WBdlpnE1vBI/AAAAAAAAid0/KI3fl-7x270i2Ywcr_2DmimhJp2PoljEgCLcB/s1600/Playlist-91coverart.jpg'},
         {name: '1', img: 'https://4.bp.blogspot.com/-Qls0bKPYaBY/WBdlpnE1vBI/AAAAAAAAid0/KI3fl-7x270i2Ywcr_2DmimhJp2PoljEgCLcB/s1600/Playlist-91coverart.jpg'},  
+        {name: '1', img: 'https://4.bp.blogspot.com/-Qls0bKPYaBY/WBdlpnE1vBI/AAAAAAAAid0/KI3fl-7x270i2Ywcr_2DmimhJp2PoljEgCLcB/s1600/Playlist-91coverart.jpg'}, 
+        {name: '1', img: 'https://4.bp.blogspot.com/-Qls0bKPYaBY/WBdlpnE1vBI/AAAAAAAAid0/KI3fl-7x270i2Ywcr_2DmimhJp2PoljEgCLcB/s1600/Playlist-91coverart.jpg'}, 
+        {name: '1', img: 'https://4.bp.blogspot.com/-Qls0bKPYaBY/WBdlpnE1vBI/AAAAAAAAid0/KI3fl-7x270i2Ywcr_2DmimhJp2PoljEgCLcB/s1600/Playlist-91coverart.jpg'}, 
+        {name: '1', img: 'https://4.bp.blogspot.com/-Qls0bKPYaBY/WBdlpnE1vBI/AAAAAAAAid0/KI3fl-7x270i2Ywcr_2DmimhJp2PoljEgCLcB/s1600/Playlist-91coverart.jpg'}, 
+        {name: '1', img: 'https://4.bp.blogspot.com/-Qls0bKPYaBY/WBdlpnE1vBI/AAAAAAAAid0/KI3fl-7x270i2Ywcr_2DmimhJp2PoljEgCLcB/s1600/Playlist-91coverart.jpg'}, 
+        {name: '1', img: 'https://4.bp.blogspot.com/-Qls0bKPYaBY/WBdlpnE1vBI/AAAAAAAAid0/KI3fl-7x270i2Ywcr_2DmimhJp2PoljEgCLcB/s1600/Playlist-91coverart.jpg'}, 
         {name: '1', img: 'https://4.bp.blogspot.com/-Qls0bKPYaBY/WBdlpnE1vBI/AAAAAAAAid0/KI3fl-7x270i2Ywcr_2DmimhJp2PoljEgCLcB/s1600/Playlist-91coverart.jpg'}, 
         {name: '1', img: 'https://4.bp.blogspot.com/-Qls0bKPYaBY/WBdlpnE1vBI/AAAAAAAAid0/KI3fl-7x270i2Ywcr_2DmimhJp2PoljEgCLcB/s1600/Playlist-91coverart.jpg'},
         {name: '1', img: 'https://4.bp.blogspot.com/-Qls0bKPYaBY/WBdlpnE1vBI/AAAAAAAAid0/KI3fl-7x270i2Ywcr_2DmimhJp2PoljEgCLcB/s1600/Playlist-91coverart.jpg'},
