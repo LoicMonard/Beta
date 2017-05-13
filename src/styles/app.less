@@ -48,8 +48,8 @@ body {
 //NAVBAR SETTINGS
 
 .xxxnavbar {
-  width: 96px;
   height: 100vh;
+  width: 96px;
   background: @dark;
   float: left;
   box-sizing: border-box;
@@ -78,6 +78,192 @@ body {
   }
 }
 
+// *0.875 from default values
+
+@media screen and (max-width: 1680px) {
+  .xxxnavbar {
+    width: 84px;
+    padding: 21px;
+    #xxxprofileIcon {
+      margin-bottom: 8.75px;
+    }
+    #xxxplaylistIcon {
+      margin-top: 43.75px;
+      margin-bottom: 14px;
+    }
+    #xxxeventIcon {
+      margin-top: 8.75px;
+      margin-bottom: 14px;
+    }
+    #xxxgroupIcon {
+      margin-top: 8.75px;
+      margin-bottom: 14px;
+    }
+    #xxxmoodIcon {
+      margin-top: 8.75px;
+      margin-bottom: 14px;
+    }
+    img {
+      width: 42px;
+    }
+  }
+}
+
+// *0.834375 from default values
+
+@media screen and (max-width: 1602px) {
+  .xxxnavbar {
+    width: 80.1px;
+    padding: 20.025px;
+    #xxxprofileIcon {
+      margin-bottom: 8.34375px;
+    }
+    #xxxplaylistIcon {
+      margin-top: 41.40625px;
+      margin-bottom: 13.35px;
+    }
+    #xxxeventIcon {
+      margin-top: 8.34375px;
+      margin-bottom: 13.35px;
+    }
+    #xxxgroupIcon {
+      margin-top: 8.34375px;
+      margin-bottom: 13.35px;
+    }
+    #xxxmoodIcon {
+      margin-top: 8.34375px;
+      margin-bottom: 13.35px;
+    }
+    img {
+      width: 40.05px;
+    }
+  }
+}
+
+// *0.75 from default values
+
+@media screen and (max-width: 1440px) {
+  .xxxnavbar {
+    width: 72px;
+    padding: 18px;
+    #xxxprofileIcon {
+      margin-bottom: 7.5px;
+    }
+    #xxxplaylistIcon {
+      margin-top: 37.5px;
+      margin-bottom: 12px;
+    }
+    #xxxeventIcon {
+      margin-top: 7.5px;
+      margin-bottom: 12px;
+    }
+    #xxxgroupIcon {
+      margin-top: 7.5px;
+      margin-bottom: 12px;
+    }
+    #xxxmoodIcon {
+      margin-top: 7.5px;
+      margin-bottom: 12px;
+    }
+    img {
+      width: 36px;
+    }
+  }
+}
+
+// *0.7125 from default values
+
+@media screen and (max-width: 1368px) {
+  .xxxnavbar {
+    width: 68.4px;
+    padding: 17.1px;
+    #xxxprofileIcon {
+      margin-bottom: 7.125px;
+    }
+    #xxxplaylistIcon {
+      margin-top: 35.625px;
+      margin-bottom: 11.4px;
+    }
+    #xxxeventIcon {
+      margin-top: 7.125px;
+      margin-bottom: 11.4px;
+    }
+    #xxxgroupIcon {
+      margin-top: 7.125px;
+      margin-bottom: 11.4px;
+    }
+    #xxxmoodIcon {
+      margin-top: 7.125px;
+      margin-bottom: 11.4px;
+    }
+    img {
+      width: 34.2px;
+    }
+  }
+}
+
+// *0.66875 from default values
+
+@media screen and (max-width: 1284px) {
+  .xxxnavbar {
+    width: 64.2px;
+    padding: 16.05px;
+    #xxxprofileIcon {
+      margin-bottom: 6.6875px;
+    }
+    #xxxplaylistIcon {
+      margin-top: 33.4375px;
+      margin-bottom: 10.7px;
+    }
+    #xxxeventIcon {
+      margin-top: 6.6875px;
+      margin-bottom: 10.7px;
+    }
+    #xxxgroupIcon {
+      margin-top: 6.6875px;
+      margin-bottom: 10.7px;
+    }
+    #xxxmoodIcon {
+      margin-top: 6.6875px;
+      margin-bottom: 10.7px;
+    }
+    img {
+      width: 32.1px;
+    }
+  }
+}
+
+// *0.534375 from default values
+
+@media screen and (max-width: 1026px) {
+  .xxxnavbar {
+    width: 51.3px;
+    padding: 12.825px;
+    #xxxprofileIcon {
+      margin-bottom: 5.34375px;
+    }
+    #xxxplaylistIcon {
+      margin-top: 33.4375px;
+      margin-bottom: 8.55px;
+    }
+    #xxxeventIcon {
+      margin-top: 5.34375px;
+      margin-bottom: 8.55px;
+    }
+    #xxxgroupIcon {
+      margin-top: 5.34375px;
+      margin-bottom: 8.55px;
+    }
+    #xxxmoodIcon {
+      margin-top: 5.34375px;
+      margin-bottom: 8.55px;
+    }
+    img {
+      width: 25.65px;
+    }
+  }
+}
+
 //LEFT SIDE SETTINGS
 
 .xxxleftSide {
@@ -85,6 +271,42 @@ body {
   height: 100vh;
   float: left;
   background: @azure;
+}
+
+@media screen and (max-width: 1680px) {
+  .xxxleftSide {
+    width: calc(~"40% - 42px");
+  }    
+}
+
+@media screen and (max-width: 1602px) {
+  .xxxleftSide {
+    width: calc(~"40% - 40.05px");
+  }    
+}
+
+@media screen and (max-width: 1440px) {
+  .xxxleftSide {
+    width: calc(~"40% - 36px");
+  }    
+}
+
+@media screen and (max-width: 1368px) {
+  .xxxleftSide {
+    width: calc(~"40% - 34.2px");
+  }    
+}
+
+@media screen and (max-width: 1284px) {
+  .xxxleftSide {
+    width: calc(~"40% - 32.1px");
+  }    
+}
+
+@media screen and (max-width: 1026px) {
+  .xxxleftSide {
+    width: calc(~"40% - 25.65px");
+  }    
 }
 
 //MY PLAYLISTS SETTINGS
@@ -168,4 +390,40 @@ body {
   height: 100vh;
   float: left;
   background: @night;
+}
+
+@media screen and (max-width: 1680px) {
+  .xxxrightSide {
+    width: calc(~"60% - 42px");
+  }    
+}
+
+@media screen and (max-width: 1602px) {
+  .xxxrightSide {
+    width: calc(~"60% - 40.05px");
+  }    
+}
+
+@media screen and (max-width: 1440px) {
+  .xxxrightSide {
+    width: calc(~"60% - 36px");
+  }    
+}
+
+@media screen and (max-width: 1368px) {
+  .xxxrightSide {
+    width: calc(~"60% - 34.2px");
+  }    
+}
+
+@media screen and (max-width: 1284px) {
+  .xxxrightSide {
+    width: calc(~"60% - 32.1px");
+  }    
+}
+
+@media screen and (max-width: 1026px) {
+  .xxxrightSide {
+    width: calc(~"60% - 25.65px");
+  }    
 }
