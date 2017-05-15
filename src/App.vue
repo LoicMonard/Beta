@@ -18,6 +18,9 @@
             <div id="xxxplaylistOverlay">
               <img id="xxxcheckIcon" src="./assets/Icones/check.png" alt="Check icon">
             </div>
+            <div id="xxxplaylistDetails">
+              &nbsp
+            </div>
           </div>
         </div>
         <div id="xxxgradientBack">

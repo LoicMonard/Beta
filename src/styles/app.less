@@ -331,7 +331,7 @@ body {
     .border-box;
     display: inline-block;
     font-size: 0;
-    padding: 12px;
+    margin: 10px;
     position: relative;
     img {
       width: 130px;
@@ -339,25 +339,38 @@ body {
     }
     #xxxplaylistOverlay {
       .border-box;
-      width: 130px;
-      height: 130px;
+      width: 100%;
+      height: 100%;
       position: absolute;
-      top: 12px;
-      left: 12px;
+      top: 0;
       background: black;
+      z-index: 2;
       transition: all .2s ease;
       opacity: 0;
       img {
-        margin-left: 34px;
-        margin-top: 34px;
-        height: 60px;
-        width: 60px;
+        margin-left: 25%;
+        margin-top: 25%;
+        height: 50%;
+        width: 50%;
       }
+    }
+    #xxxplaylistDetails {
+      width: 0px;
+      height: 100%;
+      position: absolute;
+      left: 100%;
+      top: 0px;
+      background: red;
+      z-index: 4;
+      transition: .3s;
     }
   }
   #xxxsinglePlaylist:hover > #xxxplaylistOverlay {
-      opacity: 0.8;
-    }
+    opacity: 0.8;
+  }
+  #xxxsinglePlaylist:hover > #xxxplaylistDetails {
+    width: calc(~"100% + 24px");
+  }
   #xxxgradientBack {
     width: 100%;
     left: 0;
@@ -382,6 +395,60 @@ body {
   transform: translateY(-200px);
 }
 
+@media screen and (max-width: 1680px) {
+  .xxxmyPlaylists, .xxxmyFriendsPlaylists {
+    #xxxsinglePlaylist {
+      img {
+        width: 113.75px;
+        height: 113.75px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1602px) {
+  .xxxmyPlaylists, .xxxmyFriendsPlaylists {
+    #xxxsinglePlaylist {
+      img {
+        width: 108.46875px;
+        height: 108.46875px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .xxxmyPlaylists, .xxxmyFriendsPlaylists {
+    #xxxsinglePlaylist {
+      img {
+        width: 97.5px;
+        height: 97.5px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1368px) {
+  .xxxmyPlaylists, .xxxmyFriendsPlaylists {
+    #xxxsinglePlaylist {
+      img {
+        width: 92.625px;
+        height: 92.625px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1284px) {
+  .xxxmyPlaylists, .xxxmyFriendsPlaylists {
+    #xxxsinglePlaylist {
+      img {
+        width: 86.9375px;
+        height: 86.9375px;
+      }
+    }
+  }
+}
 
 //RIGHT SIDE SETTINGS
 
