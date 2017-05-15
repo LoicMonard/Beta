@@ -9,6 +9,10 @@
 @azure : #1f212c;
 @night : #1a1d24;
 
+::-webkit-scrollbar { 
+    display: none; 
+}
+
 .gradient {
   background: -moz-linear-gradient(top, rgba(125,185,232,0) 0%, rgba(31,33,44,1) 90%, rgba(31,33,44,1) 97%);
   background: -webkit-linear-gradient(top, rgba(125,185,232,0) 0%,rgba(31,33,44,1) 90%,rgba(31,33,44,1) 97%);
@@ -26,6 +30,7 @@
 
 body {
   margin: 0px;
+  color: white;
 }
 
 #draggableLine {
@@ -271,6 +276,9 @@ body {
   height: 100vh;
   float: left;
   background: @azure;
+  -ms-overflow-style: none;  // IE 10+
+  overflow: -moz-scrollbars-none;  // Firefox
+  
 }
 
 @media screen and (max-width: 1680px) {
@@ -355,25 +363,39 @@ body {
       }
     }
     #xxxplaylistDetails {
-      width: 0px;
+      width: 0%;
       height: 100%;
       position: absolute;
       left: 100%;
       top: 0px;
-      background: red;
-      z-index: 4;
-      transition: .3s;
+      z-index: 9999;
+      background: @dark;
+      transition: all .3s ease;
+      color: white;
+      visibility: hidden;
+      .border-box;
+      .rightLimit {
+        left: calc(~"-100%-20px");
+      }
     }
   }
   #xxxsinglePlaylist:hover > #xxxplaylistOverlay {
     opacity: 0.8;
   }
   #xxxsinglePlaylist:hover > #xxxplaylistDetails {
-    width: calc(~"100% + 24px");
+    visibility: visible;
+    width: calc(~"100% + 20px");
+    font-size: 12px;
+  }
+  #xxxsinglePlaylist:hover > .rightLimit {
+    visibility: visible;
+    width: calc(~"100% + 20px");
+    font-size: 12px;
   }
   #xxxgradientBack {
     width: 100%;
     left: 0;
+    z-index: 9999;
     bottom: 0;
     .gradient;
     height: 150px;

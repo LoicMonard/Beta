@@ -10,7 +10,7 @@
     </div>
 
     <div class="xxxleftSide" id="xxxleftSide">
-      <div class="xxxmyPlaylists">
+      <div class="xxxmyPlaylists" id="xxxmyPlaylists">
         <span id="xxxmenuTitle">Mes playlists</span>
         <div class="xxxplaylistContainer">
           <div id="xxxsinglePlaylist" v-for="playlist in playlists">
@@ -19,7 +19,7 @@
               <img id="xxxcheckIcon" src="./assets/Icones/check.png" alt="Check icon">
             </div>
             <div id="xxxplaylistDetails">
-              &nbsp
+              {{playlist.name}}
             </div>
           </div>
         </div>
@@ -42,7 +42,7 @@
     <img src="./assets/line.png" id="draggableLine" @draggable="true" @dragstart="dragStart($event)" @dragover.prevent @drop="test($event)" @dragover.prevent @drag="move($event)">
 
     <div class="xxxrightSide" id="xxxrightSide">
-      <p>Hey</p>
+      <p>{{playlists}}</p>
     </div>
   </div>
 </template>
@@ -53,7 +53,7 @@ export default {
   data () {
     return {
       playlists: [
-        {name: '1', img: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ8oSldZDiZkQkxqhUaixRmbCHUHieUf5Tvn25WqyxuO6A97ssJ'},
+        {name: '1111111111111', img: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ8oSldZDiZkQkxqhUaixRmbCHUHieUf5Tvn25WqyxuO6A97ssJ'},
         {name: '1', img: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTgz6hZmEOKhFtTyksQ8YO-zYyJKIxgslNsJc0kOg1nZXLn9LTu'},  
         {name: '1', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuix2_4M4wJW5WPulr4Jiv3m6H6nJwXL-4FZAF0ixMijcr-a3U'}, 
         {name: '1', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvrjhfN_GWaK4E1dOrsQ4bTFpOHWTpT2UqCO3tixJQyph1r2rl'}, 
@@ -70,6 +70,20 @@ export default {
     }
   },
   methods: {
+    checkPlaylistPosition() {
+      var playlistSize = document.getElementById('xxxsinglePlaylist').offsetWidth + 20;
+      var containerSize = document.getElementById('xxxmyPlaylists').offsetWidth;
+      var count = 0;
+      console.log(containerSize, playlistSize);
+      for(var i = 0; i<this.playlists.length; i++) {
+        var index = this.playlists.indexOf(this.playlists[i]);
+        count += playlistSize;
+        if(count > containerSize) {
+          this.playlists[i].isRight = true;
+          count = 0;
+        }
+      }
+    },
     move(e) {
       console.log('MOVE METHOD');
       var bar = document.getElementById('draggableLine');
@@ -84,6 +98,11 @@ export default {
       this.dragStartPos = e.x;
       console.log("DRAG START POS " + this.dragStartPos);
     }
+  },
+  mounted() {
+    this.$nextTick(function() {
+      window.addEventListener('resize', this.checkPlaylistPosition);
+    })
   }
 }
 
