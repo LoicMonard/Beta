@@ -325,7 +325,7 @@ body {
   width: 100%;
   color: white;
   position: relative;
-  padding: 30px;
+  padding: 20px 0px 30px 20px;
   #xxxmenuTitle {
     font-family: 'montserrat-extralight';
     margin-left: 10px;
@@ -356,13 +356,13 @@ body {
       transition: all .2s ease;
       opacity: 0;
       img {
-        margin-left: 25%;
-        margin-top: 25%;
-        height: 50%;
-        width: 50%;
+        margin-left: 35%;
+        margin-top: 35%;
+        height: 30%;
+        width: 30%;
       }
     }
-    #xxxplaylistDetails {
+    #xxxplaylistDetailsRight {
       width: 0%;
       height: 100%;
       position: absolute;
@@ -374,20 +374,30 @@ body {
       color: white;
       visibility: hidden;
       .border-box;
-      .rightLimit {
-        left: calc(~"-100%-20px");
-      }
+    }
+    #xxxplaylistDetailsLeft {
+      width: 0%;
+      height: 100%;
+      position: absolute;
+      right: 100%;
+      top: 0px;
+      z-index: 9999;
+      background: @dark;
+      transition: all .3s ease;
+      color: white;
+      visibility: hidden;
+      .border-box;
     }
   }
   #xxxsinglePlaylist:hover > #xxxplaylistOverlay {
-    opacity: 0.8;
+    opacity: 0.85;
   }
-  #xxxsinglePlaylist:hover > #xxxplaylistDetails {
+  #xxxsinglePlaylist:hover > #xxxplaylistDetailsRight {
     visibility: visible;
     width: calc(~"100% + 20px");
     font-size: 12px;
   }
-  #xxxsinglePlaylist:hover > .rightLimit {
+  #xxxsinglePlaylist:hover > #xxxplaylistDetailsLeft {
     visibility: visible;
     width: calc(~"100% + 20px");
     font-size: 12px;
@@ -395,7 +405,7 @@ body {
   #xxxgradientBack {
     width: 100%;
     left: 0;
-    z-index: 9999;
+    z-index: 3;
     bottom: 0;
     .gradient;
     height: 150px;
