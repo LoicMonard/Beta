@@ -317,19 +317,15 @@ body {
   }    
 }
 
-//MY PLAYLISTS SETTINGS
+//MY PLAYLISTS & MY FRIENDS PLAYLISTS SETTINGS 
 
 .xxxmyPlaylists, .xxxmyFriendsPlaylists {
   .border-box;
-  height: 50%;
   width: 100%;
+  height: 50%;
   color: white;
   position: relative;
   padding: 20px 0px 30px 20px;
-  #xxxmenuTitle {
-    font-family: 'montserrat-extralight';
-    margin-left: 10px;
-  }
   .xxxplaylistContainer {
     margin-top: 10px;
     overflow-y: auto;
@@ -414,6 +410,11 @@ body {
   }
 }
 
+#xxxmenuTitle {
+  font-family: 'montserrat-extralight';
+  margin-left: 10px;
+}
+
 .rotate-move {
   transition: transform 1s;
 }
@@ -489,6 +490,8 @@ body {
   height: 100vh;
   float: left;
   background: @night;
+  .border-box;
+  padding: 20px 0px 30px 20px;
 }
 
 @media screen and (max-width: 1680px) {
@@ -526,3 +529,5 @@ body {
     width: calc(~"60% - 25.65px");
   }    
 }
+
+//MES EVENEMENTS 

@@ -54,7 +54,18 @@
     <!--<img src="./assets/line.png" id="draggableLine" @draggable="true" @dragstart="dragStart($event)" @dragover.prevent @drop="test($event)" @dragover.prevent @drag="move($event)">-->
 
     <div class="xxxrightSide" id="xxxrightSide">
-      <p>Hey</p>
+      <div class="xxxmyEvents">
+        <span id="xxxmenuTitle">Mes évènements</span>
+        <div class="xxxeventContainer">
+          <div id="xxxsingleEvent" v-for="event in events">
+            <img v-bind:src="event.img">
+          </div>
+        </div>
+      </div>
+      <div class="xxxgroups">
+      </div>
+      <div class="xxxmoods">
+      </div>
     </div>
   </div>
 </template>
@@ -78,6 +89,14 @@ export default {
         {name: '10', img: 'https://s-media-cache-ak0.pinimg.com/originals/50/f4/d5/50f4d510a9c309d587c3108606ae8ac1.jpg'},
         {name: '11', img: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRhh4LKCVmSZS3GsdKp065AnZjk6pwRpSyP8RjA3rokYDTZ4Bly'},
         {name: '12', img: 'https://s-media-cache-ak0.pinimg.com/736x/28/3e/8d/283e8d5f7263e56bee957a9ddb3f336d--cd-design-album-cover-design.jpg'}  
+      ],
+      events: [
+        {name: 'ACDC TRIBUTE', img: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F27583588%2F181475566476%2F1%2Foriginal.jpg?h=200&w=450&rect=0%2C0%2C9000%2C4500&s=1dc5f64eab7c977380614b4bd97d6183'},
+        {name: 'ACDC TRIBUTE', img: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F27583588%2F181475566476%2F1%2Foriginal.jpg?h=200&w=450&rect=0%2C0%2C9000%2C4500&s=1dc5f64eab7c977380614b4bd97d6183'},
+        {name: 'ACDC TRIBUTE', img: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F27583588%2F181475566476%2F1%2Foriginal.jpg?h=200&w=450&rect=0%2C0%2C9000%2C4500&s=1dc5f64eab7c977380614b4bd97d6183'},
+        {name: 'ACDC TRIBUTE', img: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F27583588%2F181475566476%2F1%2Foriginal.jpg?h=200&w=450&rect=0%2C0%2C9000%2C4500&s=1dc5f64eab7c977380614b4bd97d6183'},
+        {name: 'ACDC TRIBUTE', img: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F27583588%2F181475566476%2F1%2Foriginal.jpg?h=200&w=450&rect=0%2C0%2C9000%2C4500&s=1dc5f64eab7c977380614b4bd97d6183'},
+        {name: 'ACDC TRIBUTE', img: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F27583588%2F181475566476%2F1%2Foriginal.jpg?h=200&w=450&rect=0%2C0%2C9000%2C4500&s=1dc5f64eab7c977380614b4bd97d6183'}
       ]
     }
   },
