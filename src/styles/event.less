@@ -15,59 +15,68 @@
     margin-top: 10px;
     overflow: hidden;
     #xxxsingleEvent {
-      .border-box;
-      height: 200px;
-      position: relative;
-      float: left;
+      position: absolute;
+      display: flex;
     }
     #xxxsingleEvent:nth-child(1) {
-      img {
-        height: 50%;
-        width: 100%;
-        position: absolute;
-        top: 10%;
-        left: 10%;
-      }
+        left: 20px;
+        top: 76px;
+        z-index: 1;
+        img {
+            height: 120px;
+        }
     }
     #xxxsingleEvent:nth-child(2) {
-      img {
-        height: 70%;
-        position: absolute;
-        top: 10%;
-        left: 20%;
-      }
+        left: 100px;
+        top: 56px;
+        z-index: 2;
+        img {
+            height: 160px;
+        }
     }
     #xxxsingleEvent:nth-child(3) {
-      img {
-        height: 100%;
-        position: absolute;
-        top: 20%;
-        left: 50%;
-      }
+        left: 200px;
+        z-index: 3;
     }
     #xxxsingleEvent:nth-child(4) {
-      img {
-        height: 70%;
-        position: absolute;
-        top: 10%;
-        left: 20%;
-      }
+        left: 380px;
+        z-index: 2;
+        top: 56px;
+        img {
+            height: 160px;
+        }
     }
     #xxxsingleEvent:nth-child(5) {
-      img {
-        height: 50%;
-        position: absolute;
-        top: 10%;
-        left: 20%;
-      }
+        left: 540px;
+        top: 76px;
+        z-index: 1;
+        img {
+            height: 120px; 
+        }
     }
     #xxxsingleEvent:nth-child(6) {
-      img {
-        height: 50%;
-        position: absolute;
-        top: 10%;
-        left: 20%;
-      }
+        display: none;
     }
+
   }
+}
+
+.switch-enter-active, .switch-leave-active {
+  transition: all 1s;
+}
+.switch-enter, .switch-leave-to /* .list-leave-active for <2.1.8 */ {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.list-item {
+  display: inline-block;
+  margin-right: 10px;
+}
+.list-enter-active, .list-leave-active {
+  transition: all 1s;
+}
+.list-enter, .list-leave-to /* .list-leave-active for <2.1.8 */ {
+  opacity: 0;
+  transform: translateY(30px);
 }
