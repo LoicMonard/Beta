@@ -59,6 +59,8 @@
         <div class="xxxeventContainer">
           <div id="xxxsingleEvent" v-for="event in events">
             <img v-bind:src="event.img">
+            <div id="xxxeventOverlay">
+            </div>
           </div>
         </div>
       </div>
@@ -91,12 +93,12 @@ export default {
         {name: '12', img: 'https://s-media-cache-ak0.pinimg.com/736x/28/3e/8d/283e8d5f7263e56bee957a9ddb3f336d--cd-design-album-cover-design.jpg'}  
       ],
       events: [
-        {name: 'ACDC TRIBUTE', img: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F27583588%2F181475566476%2F1%2Foriginal.jpg?h=200&w=450&rect=0%2C0%2C9000%2C4500&s=1dc5f64eab7c977380614b4bd97d6183'},
-        {name: 'ACDC TRIBUTE', img: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F27583588%2F181475566476%2F1%2Foriginal.jpg?h=200&w=450&rect=0%2C0%2C9000%2C4500&s=1dc5f64eab7c977380614b4bd97d6183'},
-        {name: 'ACDC TRIBUTE', img: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F27583588%2F181475566476%2F1%2Foriginal.jpg?h=200&w=450&rect=0%2C0%2C9000%2C4500&s=1dc5f64eab7c977380614b4bd97d6183'},
-        {name: 'ACDC TRIBUTE', img: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F27583588%2F181475566476%2F1%2Foriginal.jpg?h=200&w=450&rect=0%2C0%2C9000%2C4500&s=1dc5f64eab7c977380614b4bd97d6183'},
-        {name: 'ACDC TRIBUTE', img: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F27583588%2F181475566476%2F1%2Foriginal.jpg?h=200&w=450&rect=0%2C0%2C9000%2C4500&s=1dc5f64eab7c977380614b4bd97d6183'},
-        {name: 'ACDC TRIBUTE', img: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F27583588%2F181475566476%2F1%2Foriginal.jpg?h=200&w=450&rect=0%2C0%2C9000%2C4500&s=1dc5f64eab7c977380614b4bd97d6183'}
+        {name: 'ACDC TRIBUTE', img: 'http://www.event-yours.fr/wp-content/uploads/2017/04/EVENT-YOURS_EVENTS-PLANNER.jpg'},
+        {name: 'ACDC TRIBUTE', img: 'https://cdn.evbuc.com/images/25935758/32755652699/1/logo.jpg'},
+        {name: 'ACDC TRIBUTE', img: 'http://www.sortiedenullepart.be/wp-content/uploads/2017/05/rsz_john-price-278681-400x200.jpg'},
+        {name: 'ACDC TRIBUTE', img: 'http://www.apptus.com/wp-content/uploads/2016/02/connect-main-theatre.jpg'},
+        {name: 'ACDC TRIBUTE', img: 'http://paintnpartyevents.com/wp-content/uploads/2017/03/MAY-8-Spring-Love-400x200.jpg'},
+        {name: 'ACDC TRIBUTE', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNtb-U01S7XJrvWvIVawrHOxW_pBNnmFWX1FYh-ttXxQqZs9svsw'}
       ]
     }
   },
