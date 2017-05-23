@@ -11,8 +11,11 @@
 
     <div class="xxxleftSide" id="xxxleftSide">
       <div class="xxxmyPlaylists" id="xxxmyPlaylists">
-        <span id="xxxmenuTitle">Mes playlists</span>
-        <div class="xxxplaylistContainer">
+        <div id="xxxglobalTitle" @click="showHide('xxxplaylistContainer')">
+          <span id="xxxmenuTitle">Mes playlists</span>
+          <img id="xxxarrowDown" src="./assets/Icones/arrowDown.png" alt="Arrow down icon">
+        </div>
+        <div class="xxxplaylistContainer" id="xxxplaylistContainer">
           <div id="xxxsinglePlaylist" v-for="playlist in playlists">
             <img v-bind:src="playlist.img">
             <div id="xxxplaylistOverlay">
@@ -31,7 +34,10 @@
       </div>
 
       <div class="xxxmyFriendsPlaylists" id="xxxmyPlaylists">
-        <span id="xxxmenuTitle">Mes d playlists</span>
+        <div>
+          <span id="xxxmenuTitle">Playlists de mes amis</span>
+          <img id="xxxarrowDown" src="./assets/Icones/arrowDown.png" alt="Arrow down icon">
+        </div>
         <div class="xxxplaylistContainer">
           <div id="xxxsinglePlaylist" v-for="playlist in playlists">
             <img v-bind:src="playlist.img">
@@ -55,7 +61,7 @@
 
     <div class="xxxrightSide" id="xxxrightSide">
       <div class="xxxmyEvents">
-        <span id="xxxmenuTitle">Mes évènements</span>
+        <span id="xxxmenuTitle">Mes évènements</span><img id="xxxarrowDown" src="./assets/Icones/arrowDown.png" alt="Arrow down icon">
         <div class="xxxeventContainer">
           <div id="xxxsingleEvent" v-for="event in events">
             <img v-bind:src="event.img">
@@ -117,6 +123,10 @@ export default {
           count = playlistSize;
         }
       }
+    },
+    showHide(id) {
+      var div = document.getElementById(id);
+      div.style.height = '0vh';
     },
     move(e) {
       console.log('MOVE METHOD');
