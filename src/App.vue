@@ -11,7 +11,7 @@
 
     <div class="xxxleftSide" id="xxxleftSide">
       <div class="xxxmyPlaylists" id="xxxmyPlaylists">
-        <div id="xxxglobalTitle" @click="showHide('xxxplaylistContainer')">
+        <div id="xxxglobalTitle" @click="resize(1)">
           <span id="xxxmenuTitle">Mes playlists</span>
           <img id="xxxarrowDown" src="./assets/Icones/arrowDown.png" alt="Arrow down icon">
         </div>
@@ -34,11 +34,11 @@
       </div>
 
       <div class="xxxmyFriendsPlaylists" id="xxxmyPlaylists">
-        <div>
+        <div id="xxxglobalTitle" @click="resize(2)">
           <span id="xxxmenuTitle">Playlists de mes amis</span>
           <img id="xxxarrowDown" src="./assets/Icones/arrowDown.png" alt="Arrow down icon">
         </div>
-        <div class="xxxplaylistContainer">
+        <div class="xxxplaylistContainer" id="xxxfplaylistContainer">
           <div id="xxxsinglePlaylist" v-for="playlist in playlists">
             <img v-bind:src="playlist.img">
             <div id="xxxplaylistOverlay">
@@ -83,6 +83,8 @@ export default {
   name: 'app',
   data () {
     return {
+      enabled_myPlaylists: true,
+      enabled_myFriendsPlaylists: true,
       playlists: [
         {name: '0', img: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ8oSldZDiZkQkxqhUaixRmbCHUHieUf5Tvn25WqyxuO6A97ssJ'},
         {name: '1', img: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTgz6hZmEOKhFtTyksQ8YO-zYyJKIxgslNsJc0kOg1nZXLn9LTu'},  
@@ -112,9 +114,8 @@ export default {
     checkPlaylistPosition() {
       this.playlists = this.playlists.map(p => { p.isRight = false; return p })
       var playlistSize = document.getElementById('xxxsinglePlaylist').offsetWidth + 20;
-      var containerSize = document.getElementById('xxxmyPlaylists').offsetWidth -40;
+      var containerSize = document.getElementById('xxxmyPlaylists').offsetWidth -20;
       var count = 0;
-      console.log(containerSize, playlistSize);
       for(var i = 0; i<this.playlists.length; i++) {
         var index = this.playlists.indexOf(this.playlists[i]);
         count += playlistSize;
@@ -124,9 +125,90 @@ export default {
         }
       }
     },
-    showHide(id) {
-      var div = document.getElementById(id);
-      div.style.height = '0vh';
+    resize(_case) {
+      debugger;
+      switch(_case) {
+        case 1:
+        {
+          if(this.enabled_myPlaylists) 
+          {
+            if(this.enabled_myFriendsPlaylists)
+            {
+              document.getElementById('xxxplaylistContainer').style.height = '0vh';
+              document.getElementById('xxxfplaylistContainer').style.height = 'auto';
+              document.getElementById('xxxmyPlaylists').style.paddingBottom = '0px';
+              document.getElementById('xxxgradientBack').style.display = 'none';
+              this.enabled_myPlaylists = false;
+            } else {
+              document.getElementById('xxxplaylistContainer').style.height = '0vh';
+              document.getElementById('xxxfplaylistContainer').style.height = '0vh';
+              document.getElementById('xxxmyPlaylists').style.paddingBottom = '0px';
+              document.getElementById('xxxgradientBack').style.display = 'initial';
+              this.enabled_myPlaylists = false;
+            }
+          } else if(!this.enabled_myPlaylists) 
+          {
+            if(this.enabled_myFriendsPlaylists)
+            {
+              document.getElementById('xxxplaylistContainer').style.height = '42vh';
+              document.getElementById('xxxfplaylistContainer').style.height = '42vh';
+              document.getElementById('xxxmyPlaylists').style.paddingBottom = '30px';
+              document.getElementById('xxxgradientBack').style.display = 'initial';
+              this.enabled_myPlaylists = true;
+            } else {
+              document.getElementById('xxxplaylistContainer').style.height = 'auto';
+              document.getElementById('xxxfplaylistContainer').style.height = '0vh';
+              document.getElementById('xxxmyPlaylists').style.paddingBottom = '0px';
+              document.getElementById('xxxgradientBack').style.display = 'none';
+              this.enabled_myPlaylists = true;
+            }
+          }
+        } break;
+        case 2:
+        {
+          if(this.enabled_myFriendsPlaylists) 
+          {
+            if(this.enabled_myPlaylists)
+            {
+              document.getElementById('xxxfplaylistContainer').style.height = '0vh';
+              document.getElementById('xxxmyPlaylists').style.paddingBottom = '0px';
+              document.getElementById('xxxgradientBack').style.display = 'none';
+              document.getElementById('xxxplaylistContainer').style.height = 'auto';
+              this.enabled_myFriendsPlaylists = false;
+            } else {
+              document.getElementById('xxxplaylistContainer').style.height = '0vh';
+              document.getElementById('xxxfplaylistContainer').style.height = '0vh';
+              document.getElementById('xxxmyPlaylists').style.paddingBottom = '0px';
+              document.getElementById('xxxgradientBack').style.display = 'initial';
+              this.enabled_myFriendsPlaylists = false;
+            }
+          } else if(!this.enabled_myFriendsPlaylistsPlaylists) 
+          {
+            if(this.enabled_myPlaylists)
+            {
+              document.getElementById('xxxplaylistContainer').style.height = '42vh';
+              document.getElementById('xxxfplaylistContainer').style.height = '42vh';
+              document.getElementById('xxxmyPlaylists').style.paddingBottom = '30px';
+              document.getElementById('xxxgradientBack').style.display = 'initial';
+              this.enabled_myFriendsPlaylists = true;
+            } else {
+              document.getElementById('xxxfplaylistContainer').style.height = 'auto';
+              document.getElementById('xxxplaylistContainer').style.height = '0vh';
+              document.getElementById('xxxmyPlaylists').style.paddingBottom = '0px';
+              document.getElementById('xxxgradientBack').style.display = 'none';
+              this.enabled_myFriendsPlaylists = true;
+            }
+          }
+        } break;
+        case 3:
+        {
+
+        } break;
+        case 4:
+        {
+
+        } break;
+      }
     },
     move(e) {
       console.log('MOVE METHOD');
