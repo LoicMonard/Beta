@@ -125,7 +125,7 @@ export default {
         }
       }
     },
-    resize(_case) {
+    async resize(_case) {
       debugger;
       switch(_case) {
         case 1:
@@ -170,7 +170,7 @@ export default {
           {
             if(this.enabled_myPlaylists)
             {
-              document.getElementById('xxxfplaylistContainer').style.height = '0vh';
+              await (document.getElementById('xxxfplaylistContainer').style.height = '0vh');
               document.getElementById('xxxmyPlaylists').style.paddingBottom = '0px';
               document.getElementById('xxxgradientBack').style.display = 'none';
               document.getElementById('xxxplaylistContainer').style.height = 'auto';
